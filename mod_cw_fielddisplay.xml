@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.4" client="site" method="upgrade">
+    <name>mod_cw_fielddisplay</name>
+    <author>Cory Webb</author>
+    <creationDate>July 2017</creationDate>
+    <copyright>Copyright (C) 2017 Cory Webb Media, LLC. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <authorEmail>joomla@corywebbmedia.com</authorEmail>
+    <authorUrl>https://cwextensions.com</authorUrl>
+    <version>1.1.1</version>
+    <description>MOD_CW_FIELDDISPLAY_XML_DESCRIPTION</description>
+
+    <scriptfile>script.cw_fielddisplay.php</scriptfile>
+
+    <files>
+        <filename module="mod_cw_fielddisplay">mod_cw_fielddisplay.php</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">en-GB.mod_cw_fielddisplay.ini</language>
+        <language tag="en-GB">en-GB.mod_cw_fielddisplay.sys.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="context"
+                    label="MOD_CW_FIELDDISPLAY_FIELD_CONTEXT_LABEL"
+                    description="MOD_CW_FIELDDISPLAY_FIELD_CONTEXT_DESC"
+                    default="" />
+                <field
+                    name="item_id"
+                    label="MOD_CW_FIELDDISPLAY_FIELD_ITEM_ID_LABEL"
+                    description="MOD_CW_FIELDDISPLAY_FIELD_ITEM_ID_DESC"
+                    default="" />
+                <field
+                    name="fields"
+                    label="MOD_CW_FIELDDISPLAY_FIELD_FIELDS_LABEL"
+                    description="MOD_CW_FIELDDISPLAY_FIELD_FIELDS_DESC"
+                    default="" />
+                <field
+                    name="fieldgroups"
+                    label="MOD_CW_FIELDDISPLAY_FIELD_FIELDGROUPS_LABEL"
+                    description="MOD_CW_FIELDDISPLAY_FIELD_FIELDGROUPS_DESC"
+                    default="" />
+            </fieldset>
+            <fieldset name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+                <field
+                    name="moduleclass_sfx"
+                    type="textarea" rows="3"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field
+                    name="cache"
+                    type="list"
+                    default="1"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option
+                        value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option
+                        value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                    name="cache_time"
+                    type="text"
+                    default="900"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                    description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                <field
+                    name="cachemode"
+                    type="hidden"
+                    default="static">
+                    <option
+                        value="static"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+
+    <updateservers>
+        <server type="extension" name="CW Content Image Module Updates"><![CDATA[https://cwextensions.com/cw-content-image-module-update-stream/?view=update&dummy=extension.xml]]></server>
+    </updateservers>
+</extension>
