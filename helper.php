@@ -84,7 +84,7 @@ class ModCwFieldDisplayHelper
 			$field_groups = explode(',', $field_groups);
 
 			foreach ($fields_by_name as $field) {
-				if (in_array($field->group, $field_groups))
+				if (in_array($field->group_id, $field_groups))
 				{
 					$return_fields[] = $field;
 				}
@@ -155,7 +155,7 @@ class ModCwFieldDisplayHelper
 
 		if ($params->get('item_id', 0))
 		{
-			$this->item->id = $parsms->get('item_id');
+			$this->item->id = $params->get('item_id');
 		}
 		else
 		{
